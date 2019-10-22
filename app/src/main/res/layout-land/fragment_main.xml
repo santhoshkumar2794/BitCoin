@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/squareChip"
+        style="@style/SquareChip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="48dp"
+        android:clickable="false"
+        android:text="@string/watching"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+        android:textColor="#FFF"
+        app:chipBackgroundColor="#F54940"
+        app:chipCornerRadius="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout" />
+
+    <TextView
+        android:id="@+id/currentPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
+        android:textColor="#000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/squareChip"
+        tools:text="$ 253.68" />
+
+    <TextView
+        android:id="@+id/differenceAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/currentPrice"
+        tools:text="-$3.45" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/appBarLayout">
+
+    </com.github.mikephil.charting.charts.LineChart>
+
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/durationToggleGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="@id/lineChart"
+        app:layout_constraintStart_toStartOf="@id/lineChart"
+        app:layout_constraintTop_toBottomOf="@id/lineChart"
+        app:singleSelection="true">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/oneWeek"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_1w" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/oneMonth"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_1m" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sixMonths"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_6m" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/oneYear"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="@string/_1y" />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

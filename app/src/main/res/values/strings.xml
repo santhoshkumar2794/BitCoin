@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BitCoin</string>
+    <string name="watching">WATCHING</string>
+    <string name="_1w">1W</string>
+    <string name="_1m">1M</string>
+    <string name="_6m">6M</string>
+    <string name="_1y">1Y</string>
+    <string name="current_price_text">$ %.2f</string>
+</resources>
